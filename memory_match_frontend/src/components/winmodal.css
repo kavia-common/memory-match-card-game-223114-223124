@@ -15,12 +15,20 @@
   border: 1px solid rgba(17, 24, 39, 0.08);
   box-shadow: var(--shadow-lg);
   padding: 20px;
-  animation: mm-fade-up 220ms ease-out;
+  animation: mm-fade-up 220ms ease-out, mm-celebrate 900ms ease-out;
 }
 
 @keyframes mm-fade-up {
   from { transform: translateY(8px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes mm-celebrate {
+  0% { transform: translateY(0) rotate(0); }
+  20% { transform: translateY(-2px) rotate(-0.3deg); }
+  40% { transform: translateY(0) rotate(0.2deg); }
+  60% { transform: translateY(-1px) rotate(-0.2deg); }
+  100% { transform: translateY(0) rotate(0); }
 }
 
 .mm-modal-header h2 {

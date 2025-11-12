@@ -5,13 +5,22 @@
 .mm-grid {
   display: grid;
   gap: 12px;
-  /* Default to 4 columns for phones >= ~360px */
-  grid-template-columns: repeat(4, 1fr);
   padding: 16px;
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   border: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+/* Dynamic grid templates */
+.mm-grid.mm-grid-4x4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.mm-grid.mm-grid-4x5 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.mm-grid.mm-grid-6x6 {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .mm-grid-cell {
@@ -20,9 +29,11 @@
 
 @media (max-width: 480px) {
   .mm-grid {
-    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 12px;
+  }
+  .mm-grid.mm-grid-6x6 {
+    grid-template-columns: repeat(4, 1fr); /* protect tiny screens */
   }
 }
 
@@ -38,4 +49,37 @@
     gap: 16px;
     padding: 22px;
   }
+}
+
+/* Confetti effect (CSS-only) */
+.mm-confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 60;
+}
+.mm-confetti::before,
+.mm-confetti::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle, rgba(37,99,235,0.9) 60%, transparent 61%) 10% -10%/8px 8px,
+    radial-gradient(circle, rgba(245,158,11,0.9) 60%, transparent 61%) 30% -12%/8px 8px,
+    radial-gradient(circle, rgba(59,130,246,0.9) 60%, transparent 61%) 50% -14%/8px 8px,
+    radial-gradient(circle, rgba(17,24,39,0.9) 60%, transparent 61%) 70% -16%/8px 8px,
+    radial-gradient(circle, rgba(37,99,235,0.9) 60%, transparent 61%) 90% -18%/8px 8px;
+  animation: mm-confetti-fall 1600ms ease-out forwards;
+  opacity: 0.85;
+}
+.mm-confetti::after {
+  filter: blur(0.2px);
+  opacity: 0.7;
+  animation-delay: 120ms;
+}
+
+@keyframes mm-confetti-fall {
+  0% { transform: translateY(-100%) rotate(0); }
+  100% { transform: translateY(0) rotate(10deg); }
 }

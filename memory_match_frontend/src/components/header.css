@@ -56,3 +56,26 @@
   font-weight: 700;
   font-size: 16px;
 }
+
+.mm-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  padding: 10px 12px;
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.mm-select select:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.mm-select select:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
