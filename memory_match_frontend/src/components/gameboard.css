@@ -1,0 +1,41 @@
+.mm-game {
+  margin-top: 20px;
+}
+
+.mm-grid {
+  display: grid;
+  gap: 12px;
+  /* Default to 4 columns for phones >= ~360px */
+  grid-template-columns: repeat(4, 1fr);
+  padding: 16px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+.mm-grid-cell {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .mm-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .mm-grid {
+    gap: 14px;
+    padding: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mm-grid {
+    gap: 16px;
+    padding: 22px;
+  }
+}

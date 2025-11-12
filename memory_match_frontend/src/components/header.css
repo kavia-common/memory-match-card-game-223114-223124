@@ -1,0 +1,58 @@
+.mm-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  background: var(--color-surface);
+  padding: 16px 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+.mm-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.mm-title {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+  color: var(--color-text);
+}
+
+.mm-subtitle {
+  margin: 4px 0 0 0;
+  color: rgba(17, 24, 39, 0.6);
+  font-size: 13px;
+}
+
+.mm-stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mm-pill {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: center;
+  min-width: 84px;
+  padding: 8px 10px;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.06), rgba(37, 99, 235, 0.02));
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.mm-pill-label {
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+.mm-pill-value {
+  font-weight: 700;
+  font-size: 16px;
+}
