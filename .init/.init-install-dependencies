@@ -1,0 +1,4 @@
+{
+    "command": "npm install",
+    "working_directory": "/home/kavia/workspace/code-generation/memory-match-card-game-223114-223124/memory_match_frontend"
+}
